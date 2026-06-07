@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "name": "base-version",
+  "timestamp": "2026-05-15T07:26:17Z",
+  "features": [
+    "Sticky Card Stacking",
+    "Magnet Portrait Effect",
+    "Character-by-character Scroll Animation",
+    "Responsive Dark Theme"
+  ],
+  "dependencies": {
+    "motion": "12.23.24",
+    "lucide-react": "0.546.0"
+  },
+  "notes": "Card stacking logic in ProjectsSection.tsx uses useTransform with start = (index + 1) / total."
+}
