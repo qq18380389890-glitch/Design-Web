@@ -13,11 +13,12 @@ export default defineConfig(({mode}) => {
       {
         name: 'copy-ai-studio-images',
         closeBundle() {
-          cpSync(
-            path.resolve(__dirname, 'src/assets/images'),
-            path.resolve(__dirname, 'dist/assets/images'),
-            { recursive: true },
-          );
+          const source = path.resolve(__dirname, 'src/assets/images');
+          const options = { recursive: true };
+
+          // Keep both the production path and AI Studio's generated /src path working.
+          cpSync(source, path.resolve(__dirname, 'dist/assets/images'), options);
+          cpSync(source, path.resolve(__dirname, 'dist/src/assets/images'), options);
         },
       },
     ],
