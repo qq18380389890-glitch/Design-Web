@@ -38,7 +38,7 @@ export default function FooterSection() {
 
         <div className="md:pt-4">
           <p className="mb-6 font-black uppercase tracking-[0.4em] opacity-30" style={{ fontSize: '14px' }}>
-            联系方式
+            与我沟通
           </p>
           <div className="grid gap-4 text-sm font-bold leading-relaxed">
             <a className="flex items-center gap-3 transition hover:opacity-50 tracking-wider" href="mailto:1611146752@qq.com">

@@ -47,7 +47,7 @@ export default function HeroSection() {
               }}
             >
               <img 
-                src="/assets/images/regenerated_image_1779017627994.png" 
+                src="/src/assets/images/regenerated_image_1779017627994.png" 
                 alt="Portrait"
                 className="w-full h-full object-contain select-none pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 referrerPolicy="no-referrer"
@@ -80,7 +80,7 @@ export default function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.5} y={20}>
-            <ContactButton label="立即咨询" onClick={scrollToContact} />
+            <ContactButton label="与我沟通" onClick={scrollToContact} />
           </FadeIn>
         </div>
       </div>
