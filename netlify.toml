@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build && node scripts/copy-ai-studio-assets.mjs"
+  publish = "dist"
+
+[[redirects]]
+  from = "/src/assets/images/*"
+  to = "/assets/images/:splat"
+  status = 200
