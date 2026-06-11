@@ -20,14 +20,17 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
       const sections = ['about', 'projects', 'services', 'contact'];
       let currentSection = '';
-
+      
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -56,24 +59,24 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
+      <nav 
         className="fixed top-0 left-1/2 -translate-x-1/2 z-[1000] w-full flex justify-center"
       >
-        <motion.div
+        <motion.div 
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{ width: 'min(var(--container-wide), calc(100vw - var(--container-padding) * 2))' }}
           className={cn(
-            "h-[72px] rounded-full border border-white/[0.12] flex items-center justify-between pl-[25px] pr-8 mt-8",
+            "h-[72px] rounded-full border border-white/[0.12] flex items-center justify-between pl-[25px] pr-8 mt-8 transition-all duration-500",
             "bg-[#080808]/72 backdrop-blur-[24px] shadow-[0_24px_90px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.08)]"
           )}
         >
           {/* Left: Branding */}
           <div className="flex items-center gap-3.5 h-[48px] group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="w-[44px] h-[44px] flex-none flex items-center justify-center overflow-hidden rounded-full border border-white/[0.12] bg-white/[0.08] backdrop-blur-md">
-              <img
-                src="/src/assets/images/regenerated_image_1779190331085.png"
+              <img 
+                src="/src/assets/images/regenerated_image_1779190331085.png" 
                 alt="Y-Logo"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.15] scale-[1.12]"
                 referrerPolicy="no-referrer"
@@ -114,7 +117,7 @@ export default function Navbar() {
 
           {/* Right: CTA & Mobile Trigger */}
           <div className="flex items-center gap-4">
-            <button
+            <button 
               onClick={() => scrollToSection('contact')}
               className="hidden sm:flex items-center gap-2 h-[48px] px-6 rounded-full border border-white/[0.16] bg-white/[0.08] backdrop-blur-md hover:bg-white/[0.12] text-[#D7E2EA] transition-all hover:scale-[1.02] active:scale-95 group"
             >
@@ -122,7 +125,7 @@ export default function Navbar() {
               <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-0.5 transition-transform opacity-60" />
             </button>
 
-            <button
+            <button 
               className="md:hidden p-2 text-[#D7E2EA] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -157,8 +160,8 @@ export default function Navbar() {
                   </span>
                 </motion.button>
               ))}
-
-              <motion.button
+              
+              <motion.button 
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}

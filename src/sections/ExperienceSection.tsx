@@ -7,7 +7,8 @@ const EXPERIENCES = [
     company: "九天语绘（成都）科技有限公司",
     role: "UX 交互设计师",
     period: "2026.02 - 2026.05",
-    desc: "主导全模态 AIGC 操作系统“灵感画布”设计，通过 LOD 降噪与物理降维机制提升沉浸式创作体验。"
+    subPeriod: "公司解散，任职结束",
+    desc: "主导全模态 AIGC 创作画布的核心体验设计，负责节点工作流、信息降噪与关键交互方案。"
   },
   {
     company: "猪哥云（四川）数字科技有限公司",
@@ -47,7 +48,14 @@ export default function ExperienceSection() {
           {EXPERIENCES.map((exp, i) => (
             <FadeIn key={i} delay={i * 0.1} className="border-b border-[#D7E2EA]/10 py-10 group hover:bg-white/[0.02] transition-colors duration-500">
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-start gap-6 px-4">
-                <span className="text-[#D7E2EA]/40 font-mono text-base uppercase tracking-widest flex md:items-center md:h-8">{exp.period}</span>
+                <div className="flex flex-col text-left">
+                  <span className="text-[#D7E2EA]/40 font-mono text-base uppercase tracking-widest flex md:items-center md:h-8">{exp.period}</span>
+                  {exp.subPeriod && (
+                    <span className="text-[#D7E2EA]/30 font-sans block text-left" style={{ fontSize: '14px' }}>
+                      {exp.subPeriod}
+                    </span>
+                  )}
+                </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-[#D7E2EA] text-xl md:text-2xl md:leading-8 font-bold">{exp.company}</h3>
                   <p className="text-[#D7E2EA]/60 font-light leading-relaxed max-w-xl">{exp.desc}</p>
