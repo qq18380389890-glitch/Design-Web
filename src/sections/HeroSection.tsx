@@ -51,6 +51,9 @@ export default function HeroSection() {
                 alt="Portrait"
                 className="w-full h-full object-contain select-none pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 referrerPolicy="no-referrer"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </Magnet>
           </FadeIn>
