@@ -11,6 +11,7 @@ const PROJECTS = [
     name: "灵感画布",
     desc: "0-1 设计全模态 AIGC 画布，构建低噪节点流转与智能衍生体验。",
     accent: "#31D0AA",
+    caseStudyUrl: "/pdfs/linggan-canvas-case.pdf",
     images: [
       "/src/assets/images/regenerated_image_1778994380936.png",
       "/src/assets/images/regenerated_image_1778994390348.png"
@@ -53,6 +54,8 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
   
   // Stacking effect: earlier items shrink slightly as you scroll down
   const scale = useTransform(progress, [start, 1], [1, 1 - (PROJECTS.length - index) * 0.02]);
+
+  const caseButtonClassName = "group relative flex items-center gap-3 pl-6 pr-2 py-2 bg-[#F4F7FA] text-[#0C0C0C] rounded-full text-[14px] font-bold tracking-[0.05em] transition-all hover:translate-y-[-2px] active:translate-y-[0px] hover:shadow-lg shadow-black/40";
 
   return (
     <div className="sticky top-20 md:top-32 w-full h-[720px] flex items-center justify-center pointer-events-none mb-[15vh]">
@@ -140,12 +143,27 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
                 {project.desc}
               </p>
               {/* Refined primary light button with dynamic accent arrow circle */}
-              <button className="group relative flex items-center gap-3 pl-6 pr-2 py-2 bg-[#F4F7FA] text-[#0C0C0C] rounded-full text-[14px] font-bold tracking-[0.05em] transition-all hover:translate-y-[-2px] active:translate-y-[0px] hover:shadow-lg shadow-black/40">
-                 <span>查看案例</span>
-                 <div style={{ backgroundColor: project.accent }} className="flex items-center justify-center w-8 h-8 rounded-full text-white transition-transform duration-300 group-hover:-rotate-45">
+              {project.caseStudyUrl ? (
+                <a
+                  href={project.caseStudyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={caseButtonClassName}
+                  aria-label={`查看${project.name}PDF案例`}
+                >
+                  <span>查看案例</span>
+                  <div style={{ backgroundColor: project.accent }} className="flex items-center justify-center w-8 h-8 rounded-full text-white transition-transform duration-300 group-hover:-rotate-45">
                     <ArrowRight className="w-4.5 h-4.5" />
-                 </div>
-              </button>
+                  </div>
+                </a>
+              ) : (
+                <button type="button" className={caseButtonClassName}>
+                  <span>查看案例</span>
+                  <div style={{ backgroundColor: project.accent }} className="flex items-center justify-center w-8 h-8 rounded-full text-white transition-transform duration-300 group-hover:-rotate-45">
+                    <ArrowRight className="w-4.5 h-4.5" />
+                  </div>
+                </button>
+              )}
            </div>
         </div>
 
@@ -198,4 +216,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
