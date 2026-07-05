@@ -1,0 +1,14 @@
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/src/assets/images/*
+  Cache-Control: public, max-age=604800
+
+/pdfs/*
+  Cache-Control: public, max-age=3600
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
