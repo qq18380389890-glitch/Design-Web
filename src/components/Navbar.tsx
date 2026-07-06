@@ -80,9 +80,6 @@ export default function Navbar() {
                 alt="Y-Logo"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.15] scale-[1.12]"
                 referrerPolicy="no-referrer"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
               />
             </div>
             <div className="hidden sm:flex flex-col leading-tight pt-0.5">

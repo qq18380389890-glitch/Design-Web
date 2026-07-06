@@ -8,6 +8,7 @@ import ServicesSection from './sections/ServicesSection';
 import ProjectsSection from './sections/ProjectsSection';
 import TestimonialsSection from './sections/TestimonialsSection';
 import FooterSection from './sections/FooterSection';
+import BackToTopButton from './components/BackToTopButton';
 
 /**
  * @license
@@ -26,6 +27,7 @@ export default function App() {
       <ExperienceSection />
       <TestimonialsSection />
       <FooterSection />
+      <BackToTopButton />
     </div>
   );
 }
