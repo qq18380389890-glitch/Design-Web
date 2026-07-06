@@ -28,6 +28,7 @@ const PROJECTS = [
       "/src/assets/images/regenerated_image_1779017603652.png",
       "/src/assets/images/regenerated_image_1778994390348.png"
     ],
+    pdfLink: "/pdfs/xiaozhixietong.pdf",
     capsuleText: "PDF CASE STUDY / 协同流程设计"
   },
   {
@@ -40,6 +41,7 @@ const PROJECTS = [
       "/src/assets/images/regenerated_image_1779017627995.png",
       "/src/assets/images/regenerated_image_1778994380936.png"
     ],
+    pdfLink: "/pdfs/INTRANETR.pdf",
     capsuleText: "PDF CASE STUDY / 企业内网设计"
   }
 ];
@@ -326,4 +328,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
