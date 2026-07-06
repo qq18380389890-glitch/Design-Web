@@ -36,7 +36,7 @@ const PROJECTS = [
     num: "03",
     tag: "DESIGN SYSTEM",
     name: "INTRANETR",
-    desc: "升级企业内网多端体验，沉淀高复用组件与统一内容管理规范。",
+    desc: "升级企业内网体验，沉淀高复用组件与统一内容管理规范。",
     accent: "#F58220",
     images: [
       "/src/assets/images/regenerated_image_1779017627995.png",
