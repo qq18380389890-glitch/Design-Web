@@ -5,26 +5,25 @@ import SectionHeader from '../components/SectionHeader';
 const EXPERIENCES = [
   {
     company: "九天语绘（成都）科技有限公司",
-    role: "UX 交互设计师",
-    period: "2026.02 - 2026.05",
-    subPeriod: "公司解散，任职结束",
+    role: "UX 设计师",
+    period: "2026.02 - 至今",
     desc: "主导全模态 AIGC 创作画布的核心体验设计，负责节点工作流、信息降噪与关键交互方案。"
   },
   {
     company: "猪哥云（四川）数字科技有限公司",
     role: "UX 设计师",
-    period: "2025.05 - 2025.10",
+    period: "2025.05 - 2026.02",
     desc: "负责对话式 AI 与智能助手体验设计，构建从业务引导、表单预填到风险反馈的高效人机交互流程。"
   },
   {
     company: "成都光恒互动科技有限公司",
     role: "UI & UX 设计师",
-    period: "2024.04 - 2025.05",
+    period: "2024.02 - 2025.05",
     desc: "负责小智协同 B 端平台全链路设计，将管线管理方法论转化为流程编排、任务派发与协同工作台体验。"
   },
   {
     company: "维塔士电脑软件（成都）有限公司",
-    role: "UI/UX 设计师",
+    role: "UI & UX 设计师",
     period: "2022.08 - 2024.02",
     desc: "系统化构建企业级 B 端产品信息架构与设计语言，覆盖内网、论坛与技能库等多场景体验升级落地。"
   },
@@ -50,11 +49,6 @@ export default function ExperienceSection() {
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-start gap-6 px-4">
                 <div className="flex flex-col text-left">
                   <span className="text-[#D7E2EA]/40 font-mono text-base uppercase tracking-widest flex md:items-center md:h-8">{exp.period}</span>
-                  {exp.subPeriod && (
-                    <span className="text-[#D7E2EA]/30 font-sans block text-left" style={{ fontSize: '14px' }}>
-                      {exp.subPeriod}
-                    </span>
-                  )}
                 </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-[#D7E2EA] text-xl md:text-2xl md:leading-8 font-bold">{exp.company}</h3>
