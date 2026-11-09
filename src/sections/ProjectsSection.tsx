@@ -224,7 +224,7 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
            </div>
 
            {/* Texture Overlay - Tech Grain */}
-           
+
 
            {/* Status Rail - Right (Opacity lowered to 0.2) */}
            <div className="absolute top-1/4 bottom-1/4 right-8 w-[1px] bg-white/5 flex flex-col items-center justify-between py-4 opacity-20">
@@ -287,7 +287,7 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
                <img 
                  src={project.images[0]} 
                  alt="" 
-                 className="w-full h-full object-cover rounded-[24px] md:rounded-[40px] hover:scale-105 transition-all duration-[1.5s] ease-out" 
+                 className="w-full h-full object-cover rounded-[24px] md:rounded-[40px] hover:scale-105 transition-all duration-[1.5s] ease-out"
                  loading="lazy"
                  decoding="async"
                  width={1600}
