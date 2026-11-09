@@ -12,7 +12,7 @@ const PROJECTS = [
     desc: "0-1 设计全模态 AIGC 画布，构建低噪节点流转与智能衍生体验。",
     accent: "#31D0AA",
     images: [
-      "/src/assets/images/regenerated_image_1778994380936.png",
+      "/src/assets/images/regenerated_image_1778994380936.png?v=20261109",
       "/src/assets/images/regenerated_image_1778994390348.png"
     ],
     pdfLink: "/pdfs/linggan-canvas-case.pdf",
