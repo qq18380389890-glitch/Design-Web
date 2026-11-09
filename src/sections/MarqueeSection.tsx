@@ -2,24 +2,24 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import React, { useRef, useEffect, useState } from 'react';
 
 const IMAGES = [
-  "/src/assets/images/regenerated_image_1779686948408.gif",
-  "/src/assets/images/regenerated_image_1779696542396.png",
-  "/src/assets/images/regenerated_image_1779697559862.png",
-  "/src/assets/images/regenerated_image_1779697553406.png",
-  "/src/assets/images/regenerated_image_1779687609028.png",
-  "/src/assets/images/regenerated_image_1779880267079.png",
-  "/src/assets/images/regenerated_image_1779772145926.gif",
+  "/optimized-regenerated_image_1779686948408.webp",
+  "/optimized-regenerated_image_1779696542396.webp",
+  "/optimized-regenerated_image_1779697559862.webp",
+  "/optimized-regenerated_image_1779697553406.webp",
+  "/optimized-regenerated_image_1779687609028.webp",
+  "/optimized-regenerated_image_1779880267079.webp",
+  "/optimized-regenerated_image_1779772145926.webp",
   "https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif",
   "https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif",
   "https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif",
   "https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif",
-  "/src/assets/images/regenerated_image_1779696548915.png",
-  "/src/assets/images/regenerated_image_1779761468124.png",
-  "/src/assets/images/regenerated_image_1779701309716.png",
-  "/src/assets/images/regenerated_image_1779435663513.gif",
-  "/src/assets/images/regenerated_image_1779440266911.png",
-  "/src/assets/images/regenerated_image_1779772094813.gif",
-  "/src/assets/images/regenerated_image_1779772130429.gif",
+  "/optimized-regenerated_image_1779696548915.webp",
+  "/optimized-regenerated_image_1779761468124.webp",
+  "/optimized-regenerated_image_1779701309716.webp",
+  "/optimized-regenerated_image_1779435663513.webp",
+  "/optimized-regenerated_image_1779440266911.webp",
+  "/optimized-regenerated_image_1779772094813.webp",
+  "/optimized-regenerated_image_1779772130429.webp",
   "https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif",
   "https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif",
   "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif"
@@ -46,13 +46,16 @@ export default function MarqueeSection() {
           className="flex gap-3 whitespace-nowrap will-change-transform"
           style={{ x: x1 }}
         >
-          {[...row1, ...row1].map((src, i) => (
+          {row1.map((src, i) => (
             <img 
               key={i} 
               src={src} 
               alt="" 
               className="w-[300px] sm:w-[420px] h-[200px] sm:h-[270px] rounded-2xl object-cover flex-shrink-0"
               loading="lazy"
+              decoding="async"
+              width={840}
+              height={540}
               referrerPolicy="no-referrer"
             />
           ))}
@@ -63,13 +66,16 @@ export default function MarqueeSection() {
           className="flex gap-3 whitespace-nowrap will-change-transform"
           style={{ x: x2 }}
         >
-          {[...row2, ...row2].map((src, i) => (
+          {row2.map((src, i) => (
             <img 
               key={i} 
               src={src} 
               alt="" 
               className="w-[300px] sm:w-[420px] h-[200px] sm:h-[270px] rounded-2xl object-cover flex-shrink-0"
               loading="lazy"
+              decoding="async"
+              width={840}
+              height={540}
               referrerPolicy="no-referrer"
             />
           ))}

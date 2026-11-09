@@ -20,14 +20,13 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
+    let frame: number | null = null;
+    const updateActiveSection = () => {
+      frame = null;
       const sections = ['about', 'projects', 'services', 'contact'];
       let currentSection = '';
       
@@ -44,9 +43,15 @@ export default function Navbar() {
       setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (frame === null) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateActiveSection();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -69,12 +74,12 @@ export default function Navbar() {
           style={{ width: 'min(var(--container-wide), calc(100vw - var(--container-padding) * 2))' }}
           className={cn(
             "h-[72px] rounded-full border border-white/[0.12] flex items-center justify-between pl-[25px] pr-8 mt-8 transition-all duration-500",
-            "bg-[#080808]/72 backdrop-blur-[24px] shadow-[0_24px_90px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.08)]"
+            "bg-[#080808]/84 backdrop-blur-[12px] shadow-[0_24px_90px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.08)]"
           )}
         >
           {/* Left: Branding */}
           <div className="flex items-center gap-3.5 h-[48px] group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-[44px] h-[44px] flex-none flex items-center justify-center overflow-hidden rounded-full border border-white/[0.12] bg-white/[0.08] backdrop-blur-md">
+            <div className="w-[44px] h-[44px] flex-none flex items-center justify-center overflow-hidden rounded-full border border-white/[0.12] bg-white/[0.08]">
               <img 
                 src="/src/assets/images/regenerated_image_1779190331085.png" 
                 alt="Y-Logo"
@@ -119,7 +124,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="hidden sm:flex items-center gap-2 h-[48px] px-6 rounded-full border border-white/[0.16] bg-white/[0.08] backdrop-blur-md hover:bg-white/[0.12] text-[#D7E2EA] transition-all hover:scale-[1.02] active:scale-95 group"
+              className="hidden sm:flex items-center gap-2 h-[48px] px-6 rounded-full border border-white/[0.16] bg-white/[0.08] hover:bg-white/[0.12] text-[#D7E2EA] transition-all hover:scale-[1.02] active:scale-95 group"
             >
               <span className="text-[16px] leading-[20px] font-medium">与我沟通</span>
               <ArrowRight className="w-[18px] h-[18px] group-hover:translate-x-0.5 transition-transform opacity-60" />

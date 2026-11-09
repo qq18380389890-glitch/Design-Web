@@ -12,8 +12,8 @@ const PROJECTS = [
     desc: "0-1 设计全模态 AIGC 画布，构建低噪节点流转与智能衍生体验。",
     accent: "#31D0AA",
     images: [
-      "/src/assets/images/regenerated_image_1778994380936.png?v=20261109",
-      "/src/assets/images/regenerated_image_1778994390348.png"
+      "/optimized-regenerated_image_1778994380936.webp",
+      "/optimized-regenerated_image_1778994390348.webp"
     ],
     pdfLink: "/pdfs/linggan-canvas-case.pdf?v=20261109-title",
     capsuleText: "PDF CASE STUDY / AIGC 画布设计"
@@ -25,8 +25,8 @@ const PROJECTS = [
     desc: "将管线管理方法论产品化，打通任务派发、流程编排与状态追踪。",
     accent: "#2F80FF",
     images: [
-      "/src/assets/images/regenerated_image_1779017603652.png",
-      "/src/assets/images/regenerated_image_1778994390348.png"
+      "/optimized-regenerated_image_1779017603652.webp",
+      "/optimized-regenerated_image_1778994390348.webp"
     ],
     pdfLink: "/pdfs/xiaozhixietong.pdf",
     capsuleText: "PDF CASE STUDY / 协同流程设计"
@@ -38,8 +38,8 @@ const PROJECTS = [
     desc: "升级企业内网体验，沉淀高复用组件与统一内容管理规范。",
     accent: "#F58220",
     images: [
-      "/src/assets/images/regenerated_image_1779017627995.png",
-      "/src/assets/images/regenerated_image_1778994380936.png"
+      "/optimized-regenerated_image_1779017627995.webp",
+      "/optimized-regenerated_image_1778994380936.webp"
     ],
     pdfLink: "/pdfs/INTRANETR.pdf",
     capsuleText: "PDF CASE STUDY / 企业内网设计"
@@ -65,8 +65,9 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
       <motion.div 
         style={{ 
           scale,
+          willChange: 'transform',
           background: 'linear-gradient(145deg, rgba(26,29,35,0.96) 0%, rgba(13,15,19,0.98) 56%, rgba(7,8,10,1) 100%)',
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 56px 120px -34px rgba(0,0,0,0.92)'
+          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 32px -12px rgba(0,0,0,0.65)'
         }}
         className="relative w-full h-full rounded-[40px] md:rounded-[60px] p-10 md:p-20 overflow-hidden pointer-events-auto flex flex-col md:grid md:grid-cols-12 gap-12 items-center"
       >
@@ -223,7 +224,7 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
            </div>
 
            {/* Texture Overlay - Tech Grain */}
-           <div className="absolute inset-0 opacity-[0.12] mix-blend-screen" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
+           
 
            {/* Status Rail - Right (Opacity lowered to 0.2) */}
            <div className="absolute top-1/4 bottom-1/4 right-8 w-[1px] bg-white/5 flex flex-col items-center justify-between py-4 opacity-20">
@@ -282,11 +283,15 @@ function ProjectItem({ project, index, progress }: ProjectItemProps) {
         {/* Visual Stage (Right 8 units) */}
         <div className="md:col-span-8 relative w-full h-full flex items-center justify-end z-20">
             {/* Primary Visual - Paper backer with F4F7FA border, rounded inside */}
-            <div className="relative w-full max-w-[720px] aspect-video rounded-[24px] md:rounded-[40px] overflow-hidden bg-[#F4F7FA] shadow-2xl z-0 transform">
+            <div className="relative w-full max-w-[720px] aspect-video rounded-[24px] md:rounded-[40px] overflow-hidden bg-[#F4F7FA] z-0 transform">
                <img 
                  src={project.images[0]} 
                  alt="" 
-                 className="w-full h-full object-cover rounded-[24px] md:rounded-[40px] grayscale-[0.1] hover:grayscale-0 hover:scale-105 transition-all duration-[1.5s] ease-out" 
+                 className="w-full h-full object-cover rounded-[24px] md:rounded-[40px] hover:scale-105 transition-all duration-[1.5s] ease-out" 
+                 loading="lazy"
+                 decoding="async"
+                 width={1600}
+                 height={900}
                  referrerPolicy="no-referrer"
                />
                <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-transparent pointer-events-none"></div>
