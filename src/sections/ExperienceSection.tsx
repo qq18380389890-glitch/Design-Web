@@ -67,8 +67,7 @@ export default function ExperienceSection() {
             <h2 className="text-[#D7E2EA] font-bold uppercase text-2xl tracking-widest">教育背景 / EDUCATION</h2>
           </FadeIn>
           <FadeIn className="border-t border-[#D7E2EA]/10 pt-10">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-start gap-6 px-4">
-              <span className="text-[#D7E2EA]/40 font-mono text-base uppercase tracking-widest flex md:items-center md:h-8">2021 - 2024</span>
+            <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] items-start gap-6 px-4">
               <div className="flex flex-col gap-2">
                 <h3 className="text-[#D7E2EA] text-xl md:text-2xl md:leading-8 font-bold">南开大学 (Nankai University)</h3>
                 <p className="text-[#D7E2EA]/60 font-light leading-relaxed max-w-xl">
