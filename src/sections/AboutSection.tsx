@@ -32,7 +32,7 @@ export default function AboutSection() {
 
           <FadeIn delay={0.1} y={20} className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-3xl mt-4">
              {['B端系统', 'SaaS', '信息架构', 'Design System', '交互规范', 'Vibe Coding', 'Figma', 'AI Workflow'].map((skill, i) => (
-               <span key={i} className="px-6 py-2.5 border border-[#D7E2EA]/10 rounded-full text-[#D7E2EA]/70 whitespace-nowrap bg-white/[0.03] backdrop-blur-sm" style={{ fontSize: 'clamp(0.75rem, 1.2vw, 1.1rem)' }}>
+               <span key={i} className="px-6 py-2.5 border border-[#D7E2EA]/10 rounded-full text-[#D7E2EA]/70 whitespace-nowrap bg-white/[0.03]" style={{ fontSize: 'clamp(0.75rem, 1.2vw, 1.1rem)' }}>
                  {skill}
                </span>
              ))}
