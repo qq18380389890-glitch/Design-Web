@@ -46,10 +46,7 @@ export default function ExperienceSection() {
         <div className="flex flex-col border-t border-[#D7E2EA]/10">
           {EXPERIENCES.map((exp, i) => (
             <FadeIn key={i} delay={i * 0.1} className="border-b border-[#D7E2EA]/10 py-10 group hover:bg-white/[0.02] transition-colors duration-500">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-start gap-6 px-4">
-                <div className="flex flex-col text-left">
-                  <span className="text-[#D7E2EA]/40 font-mono text-base uppercase tracking-widest flex md:items-center md:h-8">{exp.period}</span>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] items-start gap-6 px-4">
                 <div className="flex flex-col gap-2">
                   <h3 className="text-[#D7E2EA] text-xl md:text-2xl md:leading-8 font-bold">{exp.company}</h3>
                   <p className="text-[#D7E2EA]/60 font-light leading-relaxed max-w-xl">{exp.desc}</p>
