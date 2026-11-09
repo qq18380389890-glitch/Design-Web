@@ -15,7 +15,7 @@ const PROJECTS = [
       "/src/assets/images/regenerated_image_1778994380936.png?v=20261109",
       "/src/assets/images/regenerated_image_1778994390348.png"
     ],
-    pdfLink: "/pdfs/linggan-canvas-case.pdf?v=20261109",
+    pdfLink: "/pdfs/linggan-canvas-case.pdf?v=20261109-title",
     capsuleText: "PDF CASE STUDY / AIGC 画布设计"
   },
   {
